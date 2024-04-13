@@ -10,14 +10,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build HelloWorldApp.csproj --configuration Release'
+                sh 'dotnet build HelloWorldApp/HelloWorldApp.csproj --configuration Release'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'dotnet test HelloWorldApp.sln --logger "trx;LogFileName=./HelloWorldApp.trx"'
+                sh 'dotnet test HelloWorldApp/HelloWorldApp.sln --logger "trx;LogFileName=./HelloWorldApp.trx"'
             }
         }
-    } // This is the end of the 'stages' section
-} // This is the end of the 'pipeline' section
+    } 
+} 
